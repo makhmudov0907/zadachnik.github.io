@@ -2,8 +2,10 @@
   session_start();
 
   if (!$_SESSION['user']) {
-    header('Location: /');
+    header('Location: index.php');
   }
+  // echo fileperms(__FILE__);
+  // chmod(__FILE__, 0746);
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +31,6 @@
       <h2 style="margin: 10px 0;"><?= $_SESSION['user']['full_name']; ?></h2>
       <a href="#"><?= $_SESSION['user']['email']; ?></a>
       <a href="functions/logout.php" class="logout">Выход</a>
-
     </form>
 
 
